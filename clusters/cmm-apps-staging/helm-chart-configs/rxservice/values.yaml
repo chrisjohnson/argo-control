@@ -1,0 +1,7 @@
+rxservice:
+  image:
+    repository: kargoacr.azurecr.io/nginx
+    tag: '1.0.0'
+
+  replica:
+    replicaCount: 1

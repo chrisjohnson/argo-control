@@ -1,0 +1,84 @@
+---
+kind: Namespace
+name: rxintake
+
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Project
+metadata:
+  name: rxintake
+
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: rxintake
+  namespace: rxintake
+spec:
+  subscriptions:
+  - image:
+      discoveryLimit: 10
+      repoURL: kargoacr.azurecr.io/nginx
+      imageSelectionStrategy: SemVer
+  - chart:
+      repoURL: oci://kargoacr.azurecr.io/helm/rxintake
+      semverConstraint: '>= 1.0.0'
+
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: staging
+  namespace: rxintake
+spec:
+  subscriptions:
+    warehouse: rxintake
+  promotionMechanisms:
+    gitRepoUpdates:
+      - repoURL: https://git.innova-partners.com/cjohnson/argo-control.git
+        insecureSkipTLSVerify: true # TODO: Trust CMM CA if we're using git.innova-partners.com
+        writeBranch: main
+        pullRequest: {}
+        helm:
+          charts:
+          - repository: oci://kargoacr.azurecr.io/helm
+            name: rxintake
+            valuesFilePath: application-config/cmm-apps-staging/rxintake/values.yaml
+          images:
+          - image: kargoacr.azurecr.io/nginx
+            key: 'rxintake.image.tag'
+            value: Tag
+            chartPath: application-config/cmm-apps-staging/rxintake
+  verification:
+    analysisTemplates:
+      - name: analyze
+
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: release
+  namespace: rxintake
+spec:
+  subscriptions:
+    upstreamStages:
+    - name: staging
+  promotionMechanisms:
+    gitRepoUpdates:
+      - repoURL: https://git.innova-partners.com/cjohnson/argo-control.git
+        insecureSkipTLSVerify: true # TODO: Trust CMM CA if we're using git.innova-partners.com
+        writeBranch: main
+        pullRequest: {}
+        helm:
+          images:
+          - image: kargoacr.azurecr.io/nginx
+            key: 'rxintake.image.tag'
+            value: Tag
+            valuesFilePath: application-config/cmm-apps-release/rxintake/values.yaml
+          charts:
+          - repository: oci://kargoacr.azurecr.io/helm
+            name: rxintake
+            chartPath: application-config/cmm-apps-release/rxintake
+  verification:
+    analysisTemplates:
+      - name: analyze

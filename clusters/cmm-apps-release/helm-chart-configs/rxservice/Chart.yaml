@@ -1,0 +1,9 @@
+apiVersion: v2
+name: rxservice-cmm-apps-release
+description: A helm chart for deploying rxservice configured for cmm-apps-release
+type: application
+version: 1.0.0
+dependencies:
+  - name: rxservice
+    repository: oci://kargoacr.azurecr.io/helm
+    version: 1.0.1
