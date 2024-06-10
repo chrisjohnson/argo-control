@@ -18,11 +18,11 @@ spec:
       project: default
       source:
         repoURL: https://git.innova-partners.com/cjohnson/argo-control
-        path: application-config/cmm-platform-automation/{{ .app }}
+        path: cmm-platform-automation/helm-chart-configs/{{ .app }}
         targetRevision: main
         helm:
           valueFiles:
-          - /application-config/cmm-platform-automation/{{ .app }}/values.yaml
+          - /cmm-platform-automation/helm-chart-configs/{{ .app }}/values.yaml
       destination:
         server: "https://kubernetes.default.svc"
         namespace: "{{ .app }}"
