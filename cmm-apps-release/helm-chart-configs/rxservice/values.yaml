@@ -5,3 +5,6 @@ rxservice:
 
   replica:
     replicaCount: 1
+
+global:
+  ingressDomain: kargo-release.kat.cmmaz.cloud

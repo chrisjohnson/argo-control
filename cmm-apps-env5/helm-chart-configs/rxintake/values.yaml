@@ -5,3 +5,6 @@ rxintake:
 
   replica:
     replicaCount: 1
+
+global:
+  ingressDomain: env5.kat.cmmaz.cloud
