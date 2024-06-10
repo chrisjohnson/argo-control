@@ -1,0 +1,9 @@
+apiVersion: v2
+name: rxintake-cmm-apps-env5
+description: A helm chart for deploying rxintake configured for cmm-apps-env5
+type: application
+version: 1.0.0
+dependencies:
+  - name: rxintake
+    repository: oci://kargoacr.azurecr.io/helm
+    version: 1.0.1
