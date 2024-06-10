@@ -1,0 +1,37 @@
+api:
+  adminAccount:
+    enabled: true
+    passwordHash: '$2y$10$TRrbl9.EGlz46sGG7k4ZsOLddBJhNW0wQ9mpOk537VHOulwh7H7QG'
+    tokenSigningKey: admin
+  host: kargo-api.pretty-flounder.kat.cmmaz.cloud
+  tls:
+    enabled: false
+  ingress:
+    enabled: true
+    tls:
+      enabled: true
+  oidc:
+    enabled: true
+    dex:
+      enabled: true
+      connectors:
+      - type: oidc
+        id: okta
+        name: Okta
+        config:
+          issuer: https://cmm.oktapreview.com
+          clientID: cliendit
+          clientSecret: 'secret'
+          redirectURI: https://kargo-api.pretty-flounder.kat.cmmaz.cloud/dex/callback
+          insecureSkipEmailVerified: true
+          # The set claim is used as preferred username.
+          # Default: preferred_username
+          # preferred_username: other_user_name
+
+          # The set claim is used as email.
+          # Default: email
+          # email: mail
+
+          # The set claim is used as groups.
+          # Default: groups
+          # groups: "cognito:groups"
