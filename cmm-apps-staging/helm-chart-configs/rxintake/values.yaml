@@ -5,3 +5,6 @@ rxintake:
 
   replica:
     replicaCount: 1
+
+global:
+  ingressDomain: kargo-staging.kat.cmmaz.cloud
