@@ -1,0 +1,5 @@
+apiVersion: v2
+name: cmm-kargo-projects-cmm-platform-automation
+description: A helm chart for deploying cmm-kargo-projects configured for cmm-platform-automation
+type: application
+version: 1.0.0
