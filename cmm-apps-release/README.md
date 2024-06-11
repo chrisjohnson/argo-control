@@ -2,4 +2,4 @@
 
 The configuration for all applications deployed to cmm-apps-release
 
-https://argocd.cmm-apps-release.cmmaz.cloud/
+https://argocd.kargo-release.kat.cmmaz.cloud/
