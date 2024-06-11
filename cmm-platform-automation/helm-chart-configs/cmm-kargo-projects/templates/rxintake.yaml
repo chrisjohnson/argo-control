@@ -39,7 +39,7 @@ spec:
     warehouse: rxintake
   promotionMechanisms:
     gitRepoUpdates:
-      - repoURL: https://git.innova-partners.com/cjohnson/argo-control.git
+      - repoURL: https://github.com/chrisjohnson/argo-control.git
         insecureSkipTLSVerify: true # TODO: Trust CMM CA if we're using git.innova-partners.com
         writeBranch: main
         pullRequest: {}
@@ -69,7 +69,7 @@ spec:
     - name: staging
   promotionMechanisms:
     gitRepoUpdates:
-      - repoURL: https://git.innova-partners.com/cjohnson/argo-control.git
+      - repoURL: https://github.com/chrisjohnson/argo-control.git
         insecureSkipTLSVerify: true # TODO: Trust CMM CA if we're using git.innova-partners.com
         writeBranch: main
         pullRequest: {}
@@ -98,7 +98,7 @@ spec:
     warehouse: rxintake
   promotionMechanisms:
     gitRepoUpdates:
-      - repoURL: https://git.innova-partners.com/cjohnson/argo-control.git
+      - repoURL: https://github.com/chrisjohnson/argo-control.git
         insecureSkipTLSVerify: true # TODO: Trust CMM CA if we're using git.innova-partners.com
         writeBranch: main
         pullRequest: {}

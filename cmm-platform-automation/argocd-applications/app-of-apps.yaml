@@ -17,7 +17,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://git.innova-partners.com/cjohnson/argo-control
+        repoURL: https://github.com/chrisjohnson/argo-control
         path: cmm-platform-automation/helm-chart-configs/{{ .app }}
         targetRevision: main
         helm:
