@@ -1,0 +1,6 @@
+dependencies:
+- name: rxintake
+  repository: oci://kargoacr.azurecr.io/helm
+  version: 1.0.4
+digest: sha256:1a7775c032f7f948b916b21fb1d83aaf8275fd6119113f9cb76eae58dff8668d
+generated: "2024-06-11T17:46:44.261935057Z"
