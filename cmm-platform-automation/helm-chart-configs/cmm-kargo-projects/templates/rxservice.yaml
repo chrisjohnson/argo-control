@@ -106,12 +106,12 @@ spec:
           charts:
           - repository: oci://kargoacr.azurecr.io/helm
             name: rxservice
-            valuesFilePath: cmm-apps-env5/helm-chart-configs/rxservice/values.yaml
+            chartPath: cmm-apps-env5/helm-chart-configs/rxservice
           images:
           - image: kargoacr.azurecr.io/nginx
             key: 'rxservice.image.tag'
             value: Tag
-            chartPath: cmm-apps-env5/helm-chart-configs/rxservice
+            valuesFilePath: cmm-apps-env5/helm-chart-configs/rxservice/values.yaml
   verification:
     analysisTemplates:
       - name: analyze
