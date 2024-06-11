@@ -4,7 +4,7 @@ kind: Namespace
 metadata:
   name: rxintake
   labels:
-    kargo.akuity.io/project: true
+    kargo.akuity.io/project: "true"
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
