@@ -6,4 +6,4 @@ version: 1.0.0
 dependencies:
   - name: rxintake
     repository: oci://kargoacr.azurecr.io/helm
-    version: 1.0.1
+    version: 1.0.4
