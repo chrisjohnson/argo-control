@@ -45,12 +45,12 @@ spec:
           charts:
           - repository: oci://kargoacr.azurecr.io/helm
             name: rxservice
-            valuesFilePath: application-config/cmm-apps-staging/rxservice/values.yaml
+            valuesFilePath: cmm-apps-staging/helm-chart-configs/rxservice/values.yaml
           images:
           - image: kargoacr.azurecr.io/nginx
             key: 'rxservice.image.tag'
             value: Tag
-            chartPath: application-config/cmm-apps-staging/rxservice
+            chartPath: cmm-apps-staging/helm-chart-configs/rxservice
   verification:
     analysisTemplates:
       - name: analyze
@@ -76,11 +76,11 @@ spec:
           - image: kargoacr.azurecr.io/nginx
             key: 'rxservice.image.tag'
             value: Tag
-            valuesFilePath: application-config/cmm-apps-release/rxservice/values.yaml
+            valuesFilePath: cmm-apps-release/helm-chart-configs/rxservice/values.yaml
           charts:
           - repository: oci://kargoacr.azurecr.io/helm
             name: rxservice
-            chartPath: application-config/cmm-apps-release/rxservice
+            chartPath: cmm-apps-release/helm-chart-configs/rxservice
   verification:
     analysisTemplates:
       - name: analyze
@@ -104,12 +104,12 @@ spec:
           charts:
           - repository: oci://kargoacr.azurecr.io/helm
             name: rxservice
-            valuesFilePath: application-config/cmm-apps-env5/rxservice/values.yaml
+            valuesFilePath: cmm-apps-env5/helm-chart-configs/rxservice/values.yaml
           images:
           - image: kargoacr.azurecr.io/nginx
             key: 'rxservice.image.tag'
             value: Tag
-            chartPath: application-config/cmm-apps-env5/rxservice
+            chartPath: cmm-apps-env5/helm-chart-configs/rxservice
   verification:
     analysisTemplates:
       - name: analyze

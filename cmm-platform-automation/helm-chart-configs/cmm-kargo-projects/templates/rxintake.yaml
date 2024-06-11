@@ -45,12 +45,12 @@ spec:
           charts:
           - repository: oci://kargoacr.azurecr.io/helm
             name: rxintake
-            valuesFilePath: application-config/cmm-apps-staging/rxintake/values.yaml
+            valuesFilePath: cmm-apps-staging/helm-chart-configs/rxintake/values.yaml
           images:
           - image: kargoacr.azurecr.io/nginx
             key: 'rxintake.image.tag'
             value: Tag
-            chartPath: application-config/cmm-apps-staging/rxintake
+            chartPath: cmm-apps-staging/helm-chart-configs/rxintake
   verification:
     analysisTemplates:
       - name: analyze
@@ -76,11 +76,11 @@ spec:
           - image: kargoacr.azurecr.io/nginx
             key: 'rxintake.image.tag'
             value: Tag
-            valuesFilePath: application-config/cmm-apps-release/rxintake/values.yaml
+            valuesFilePath: cmm-apps-release/helm-chart-configs/rxintake/values.yaml
           charts:
           - repository: oci://kargoacr.azurecr.io/helm
             name: rxintake
-            chartPath: application-config/cmm-apps-release/rxintake
+            chartPath: cmm-apps-release/helm-chart-configs/rxintake
   verification:
     analysisTemplates:
       - name: analyze
@@ -104,12 +104,12 @@ spec:
           charts:
           - repository: oci://kargoacr.azurecr.io/helm
             name: rxintake
-            valuesFilePath: application-config/cmm-apps-env5/rxintake/values.yaml
+            valuesFilePath: cmm-apps-env5/helm-chart-configs/rxintake/values.yaml
           images:
           - image: kargoacr.azurecr.io/nginx
             key: 'rxintake.image.tag'
             value: Tag
-            chartPath: application-config/cmm-apps-env5/rxintake
+            chartPath: cmm-apps-env5/helm-chart-configs/rxintake
   verification:
     analysisTemplates:
       - name: analyze
