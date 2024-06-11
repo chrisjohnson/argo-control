@@ -9,7 +9,7 @@ spec:
   generators:
     - list:
         elements:
-          - app: kargo
+          #- app: kargo
           - app: cmm-kargo-projects
   template:
     metadata:
