@@ -1,0 +1,17 @@
+lava-demo-api:
+  image:
+    tag: 1.12.0
+
+  liquibase-helper:
+    databases:
+      api:
+        image:
+          tag: 1.20.0
+
+  secrets-helper:
+    # Override the chart default behavior to pull secrets from azure keyvault
+    externalSecretsOperator:
+      enabled: true
+      secretStores:
+        lava-demo-api-secret-store:
+          vaultUrl: https://lava-demo-api-prod.vault.azure.net

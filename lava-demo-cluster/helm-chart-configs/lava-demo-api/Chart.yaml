@@ -1,0 +1,9 @@
+apiVersion: v2
+name: lava-demo-api
+description: A helm chart for deploying lava-demo-api configured for lava-demo-cluster
+type: application
+version: 1.0.0
+dependencies:
+  - name: lava-demo-api
+    version: 2.9.0
+    repository: oci://mck-cmm-oci-prod-virtual.jfrog.io/covermymeds/helm
