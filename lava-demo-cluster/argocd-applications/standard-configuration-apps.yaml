@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: standard-configuration-apps
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - list:
+        elements:
+          - app: lava-demo-admin
+          - app: lava-demo-api
+  template:
+    metadata:
+      name: "{{ .app }}"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/chrisjohnson/argo-control
+        path: lava-demo-cluster/helm-chart-configs/{{ .app }}
+        targetRevision: main
+        helm:
+          passCredentials: true
+          valueFiles:
+          - /lava-demo-cluster/helm-chart-configs/{{ .app }}/values.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{ .app }}"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
