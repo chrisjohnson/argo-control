@@ -1,6 +1,11 @@
-lava-demo-admin-database:
+liquibase-helper:
   databases:
     lava-demo-admin:
       image:
         repository: mck-cmm-oci-prod-virtual.jfrog.io/covermymeds/image/lava-demo-admin-database
         tag: 1.2.0
+      secret:
+        name: liquibase-credential
+        urlKey: url
+        usernameKey: username
+        passwordKey: password
