@@ -1,9 +1,9 @@
 apiVersion: v2
 name: lava-demo-admin
-description: A helm chart for deploying lava-demo-admin configured for lava-demo-cluster
+description: A helm chart for deploying lava-demo-admin-database configured for lava-demo-cluster
 type: application
 version: 1.0.0
 dependencies:
-  - name: lava-demo-admin
-    version: 2.4.0
+  - name: liquibase-helper
+    version: 1.1.0
     repository: oci://mck-cmm-oci-prod-virtual.jfrog.io/covermymeds/helm

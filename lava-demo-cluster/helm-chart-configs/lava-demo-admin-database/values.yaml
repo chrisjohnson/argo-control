@@ -1,0 +1,6 @@
+lava-demo-admin-database:
+  databases:
+    lava-demo-admin:
+      image:
+        repository: mck-cmm-oci-prod-virtual.jfrog.io/covermymeds/image/lava-demo-admin-database
+        tag: 1.2.0

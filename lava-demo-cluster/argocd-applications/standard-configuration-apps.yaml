@@ -10,7 +10,9 @@ spec:
     - list:
         elements:
           - app: lava-demo-admin
+          - app: lava-demo-admin-database
           - app: lava-demo-api
+          - app: lava-demo-api-database
   template:
     metadata:
       name: "{{ .app }}"
