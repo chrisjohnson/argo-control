@@ -6,7 +6,7 @@ lava-demo-admin:
     databases:
       admin:
         image:
-          tag: 1.20.0
+          tag: 1.1.0
 
   secrets-helper:
     # Override the chart default behavior to pull secrets from azure keyvault

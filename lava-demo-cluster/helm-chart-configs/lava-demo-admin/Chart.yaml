@@ -5,5 +5,5 @@ type: application
 version: 1.0.0
 dependencies:
   - name: lava-demo-admin
-    version: 2.3.0
+    version: 2.3.1
     repository: oci://mck-cmm-oci-prod-virtual.jfrog.io/covermymeds/helm
