@@ -1,11 +1,3 @@
 lava-demo-admin:
   image:
     tag: 1.12.0
-
-  secrets-helper:
-    # Override the chart default behavior to pull secrets from azure keyvault
-    externalSecretsOperator:
-      enabled: true
-      secretStores:
-        lava-demo-admin-secret-store:
-          vaultUrl: https://lava-demo-admin-prod.vault.azure.net
