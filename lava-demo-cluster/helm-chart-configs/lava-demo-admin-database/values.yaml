@@ -3,12 +3,17 @@ liquibase-helper:
     lava-demo-admin:
       image:
         repository: mck-cmm-oci-prod-virtual.jfrog.io/covermymeds/image/lava-demo-admin-database
-        tag: 1.11.0
+        tag: 1.12.0
       secret:
         name: liquibase-credential
         urlKey: url
         usernameKey: username
         passwordKey: password
+  liquibaseJob:
+    args:
+      - |
+        liquibase update --changelog-file=changelog.yaml
+        sleep 3600
 
 secrets-helper:
   appSecrets:
