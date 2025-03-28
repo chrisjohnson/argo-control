@@ -3,9 +3,21 @@ liquibase-helper:
     lava-demo-admin:
       image:
         repository: mck-cmm-oci-prod-virtual.jfrog.io/covermymeds/image/lava-demo-admin-database
-        tag: 1.2.0
+        tag: 1.10.0
       secret:
         name: liquibase-credential
         urlKey: url
         usernameKey: username
         passwordKey: password
+
+secrets-helper:
+  appSecrets:
+    secrets:
+      liquibase-credential:
+        data:
+          - targetSecretKey: url
+            testingValue: jdbc:postgresql://cmm-dba-test.postgres.database.azure.com:5432/cmm_test
+          - targetSecretKey: username
+            testingValue: pgadmin
+          - targetSecretKey: password
+            testingValue: P@$$w0rd!

@@ -5,5 +5,9 @@ type: application
 version: 1.0.0
 dependencies:
   - name: liquibase-helper
-    version: 1.1.0
+    version: 1.2.0
+    repository: oci://mck-cmm-oci-prod-virtual.jfrog.io/covermymeds/helm
+    #repository: file:///Users/cjohnson/src/covermymeds/platform-helm-charts/charts/liquibase-helper
+  - name: secrets-helper
+    version: 1.1.1
     repository: oci://mck-cmm-oci-prod-virtual.jfrog.io/covermymeds/helm
