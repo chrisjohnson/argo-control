@@ -3,7 +3,7 @@ liquibase-helper:
     lava-demo-admin:
       image:
         repository: mck-cmm-oci-prod-virtual.jfrog.io/covermymeds/image/lava-demo-admin-database
-        tag: 1.10.0
+        tag: 1.11.0
       secret:
         name: liquibase-credential
         urlKey: url
